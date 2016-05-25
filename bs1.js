@@ -23,7 +23,19 @@ Woodpecker.goAway = function(sentence){
 console.log(Dog.say());
 console.log(Cat.say());
 console.log(Woodpecker.say());
-
+var getType = function(obj) {
+  return ({}).toString.call(obj).match(/\s([a-z|A-Z]+)/)[1].toLowerCase();
+};
+Dog.getTypeOwn = function(){
+  if (typeof this.name === "string" && typeof this.say === "function" && typeof this.sound === "string"){
+    return "Animal";
+  }
+  else{
+    return "Not Animal";
+  };
+};
+console.log(Dog.getTypeOwn())
+console.log(getType(Dog));
 
 console.log(Dog.goAway("what are you doing?"))
 console.log(Cat.goAway("what are you doing?"))
