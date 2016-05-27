@@ -23,5 +23,7 @@ input[type="checkbox"] {
 .list-group-item button {
 background: none;
 border-style: none;
-margin-top: 5px;
+margin-top: 3px;
 }
+.checkbox-inline {	width: 95%;}
+.checkbox-inline label {overflow-x: scroll;}
