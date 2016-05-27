@@ -6,16 +6,16 @@ $(document).ready(function(){
         if (e.keyCode === 13)
         {
           var text = $('#newTask').val();
-              $("#todo-list").append('<li ><input type="checkbox" class="toggle"/ ><span class="text">'
-          + text + ' </span><button class="clear"></button></li>');
+              $("#todo-list").append('<li class="list-group-item"><input type="checkbox" class="toggle"/ ><span class="text">'
+          + text + ' </span><button class="pull-righ clear"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></li>');
           $("#newTask").val('');
         }
     });
     //button variant
     $('#submit').click(function(){
       var text = $('#newTask').val();
-          $("#todo-list").append('<li ><input type="checkbox" class="toggle"/ ><span class="text">'
-      + text + ' </span><button class="clear"></button></li>');
+          $("#todo-list").append('<li class="list-group-item"><div class="checkbox-inline"><label><input type="checkbox" class="toggle"> <span class="text">'
+      + text + ' </label></div></span><button class="pull-righ clear"><span class="glyphicon  glyphicon-remove " aria-hidden="true"></span></button></li>');
       $("#newTask").val('');
     });
     //remove button
