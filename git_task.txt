@@ -1,0 +1,104 @@
+Етап 0.
+Спочатку створимо репозиторій на github.(Додамо наш ssh ключ, якщо він не доданий і зробимо git clone в локальну папку на ПК).
+Я використаю репозиторій, яким користувався для здачі завдань на відборі до Академії.
+Додаткові завдання до гілок...
+----------------------------------Master----------------------------------------
+1.Завдання:сделать минимум 2 коммита* до ответвления
+	git add bs1.js
+	git status (для перевірки змін)
+	git commit -m "1: first 2 commits to master(1 commit)"
+	git push origin master
+
+	git add bs2.js
+	git status (для перевірки змін)
+	git commit -m "1: first 2 commits to master(2 commit)"
+	git push origin master
+Додав два файла у гілку master.
+-----------------------------------Develop--------------------------------------
+2.У гілці develop.
+Для початку створимо гілку develop.
+	git checkout -b develop
+	git push origin develop
+	git brach(дивимось у якій ми гілці).
+
+Завдання: сделать минимум 2 коммита, например:
+ - добавить новый файл с кодом
+ -  изменить этот файл.
+
+Первіряємо у якій ми гілці, якщо у develop комітимо.
+	git branch
+	git add develop.js
+	git commit -m "3:Add file with code to develop branch"
+	git push origin develop
+Відповідно тут так само, додав файл develop.js
+-----------------------------------develop-feature1-----------------------------
+3.У гілці develop-feature1.
+Створимо гілку.
+	git branch(перевіряємо чи ми у develop)
+	git checkout -b develop-feature1
+	git push origin develop-feature1
+Завдання: min 2 more commit, one in file from develop
+	git add dev_feature_1.js
+	git commit -m "3:add commits to new feature branch(1 commit)"
+	git push origin develop-feature1
+	
+	Змінив файл develop.js у гілці develop-feature1
+	git add develop.js
+	git commit -m "3:feature in develop file(2commit)"
+	git push origin develop-feature1
+
+-----------------------------------develop-feature2-----------------------------
+4.У гілці develop-feature2.
+Повертаємось у develop і створюємо ще одну гілку.
+	git checkout develop
+	git checkout -b "develop-feature2"
+	git push origin develop-feature2
+Завдання:min 2 more commit, one conflicting with develop-feature1 in file from develop
+	git add dev_feature2.js
+	git commit -m "4:Add commit tonew feature branch"
+	git push origin develop-feature2
+	
+	2 commit with conflict(додав коментарів і пару стрічок коду).Тут і має виникнути конфлікт.
+	git add develop.js
+	git commit -m "4:add conflict commit to develop-feautre2 branch(develop.js)"
+	git push origin develop-feature2
+
+Завдання:Для практики, желательно попробовать:
+1.Слить изменения из develop-feature1 в develop
+	git checkout master
+	git merge develop
+2.Слить изменения develop в master и пометить полученную ревизию master тегом release1
+	після вище виконаних команд
+	git tag release1 //додаємо тег.
+	git tag	дивимось //список тегів.
+3.Удалить develop-feature2 локально и с сервера
+	На Пк 
+	git branch --delete developer-feature2
+	На GitHub
+	git push origin :develop-feature2
+*****************************************Работа с историей изменений************
+1.Завдання: команда которая выводит сообщения и автора всех коммитов из ветки develop-feature1, которые сделаны за последние 3 часа и которых нет в родительских ветках (develop, master). Сортировка по дате, первые более новые.
+	git checkout develop-feature1
+	git log origin/master..HEAD origin/develop..HEAD --since=3.hours --pretty=format:"%an %s"
+	origin/branchname ми обираємо гілки в яких не будем обирати коміти по branchname
+	--since фільтр по часу
+	--pretty=format для форматування змісту логу.
+Завдання: команда выводит для каждого коммита из веток master, develop, в сообщении которых есть упоминание заданного номера задачи (допустим задачи 231), его сообщение, автора и дату. Сортировка по дате, первые более новые.
+	git checkout master
+	git log master develop --pretty=format:"%an %s: %ar" --grep="3"
+--grep="3" шукаємо у повідомленні коміту.
+Автоматом сортує від нових до старих.
+*****************************************Избирательное слияние******************
+Я б використав git cherry-pick d42c389f(номер коміта), або якщо комітів кілька то треба вказати їх порядок від A..B
+git cherry-pick A..B Але A<B по порядку.
+****************************************“Исправление ошибок”********************
+Перейшов би в ту гілку
+git chekout developer-feature3
+Написав би команду, яка вивела б n останніх комітів(rebase).
+	git rebase -i HEAD~3
+У консольному текстовому редакторі, необхідно змінити pick на reword біля потрібного коміту.
+Зберігаємо, далі ще один текстовий редактор, змінюємо текст коміту.
+І далі 
+	git push --force 
+Для повного списку команд можна написати git rebase --interactive.
+
