@@ -1,3 +1,4 @@
+//git task
 //realization with constructors function
 var Animal = function(age,name,sound,region){
   this.age = age;
@@ -85,13 +86,13 @@ var getTypeOwn = function(){
   };
 };
 //call methods of objects
-console.log(dogObject.say())
-console.log(catObject.say())
-console.log(woodpeckerObject.say())
+console.log(dogObject.say());
+console.log(catObject.say());
+console.log(woodpeckerObject.say());
 
-console.log(dogObject.goAway())
-console.log(catObject.goAway())
-console.log(woodpeckerObject.goAway())
+console.log(dogObject.goAway());
+console.log(catObject.goAway());
+console.log(woodpeckerObject.goAway());
 
 console.log(getTypeOwn.call(dogObject));
 console.log(getTypeOwn.call(catObject));
