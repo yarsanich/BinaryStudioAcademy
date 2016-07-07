@@ -1,35 +1,87 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="bs2.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  </head>
-  <body>
-  <div class="container">
-  <form class="form-inline">
-      <div class="form-group">
-  <input type="text" class="form-control" id="newTask" placeholder="Text" aria-describedby="basic-addon1">
-   </div>
-    <button type="button" id="submit" class="btn btn-primary" value="add">Add</button>
-    </form>
-    <ul id="todo-list" class="list-group">
-    </ul>
-    <br>
-    <div class="checkbox">
-    <label>
-      <input type="checkbox" id="toggle-all"> Toggle all
-    </label>
-  </div>
-    <button type="checkbox" class="btn btn-default" id="clearcompleted">Clear completed</button>
-  </div>
-  </body>
+    <head>
+        <title>BSA 16 JS - CSS + HTML</title>
+        <link rel = stylesheet href = "main.css">
+    </head>    
+<body>
+    <header> 
+        <img src="http://misha.blog.rs/gallery/2283/previews-med/free%20as%20a%20man%20logo.png" alt="logo" id="logo">
+        <p class = "slogan">Pied Piper</p>
+    </header>
+    <div class = "main">
+        <div class = "menu">
+            <nav>
+                <ul>
+                    <li>
+                        First
+                    </li>
+                    <li>
+                        Second
+                    </li>
+                    <li>
+                        Third
+                    </li>
+                    <li>
+                        Fourth
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class = "content">
+            <div class = "work">
+                <div class="desk">
+                    <p>Work 1</p>
+                </div>
+                <div class="desk">
+                    <p>Work 2</p>
+                </div>
+                <div class="desk" id = "special">
+                    <p>Work 3</p>
+                </div>
+                <div class="desk">
+                    <p>Work 4</p>
+                </div>
+                <div class="desk">
+                    <p>Work 5</p>
+                </div>
+                <div class="desk">
+                    <p>Work 6</p>
+                </div>
+            </div>
+            <div class = "examples">
+                <div class = "fixed">
+                    <div class="example">
+                        <p>Example 1</p>
+                    </div>
+                    <div class="example">
+                        <p>Example 2</p>
+                    </div>
+                    <div class="example">
+                        <p>Example 3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "clear">
+            
+        </div>
+    </div>
+    <footer>
+        <div class = "clients">
+            <div class="client">
+                <p>Client 1</p>
+            </div>
+            <div class = "client">
+                <p>Clinet 2</p>
+            </div>
+            <div class = "client">
+                <p>Clinet 3</p>
+            </div>
+        </div>
+        <div class = "contact_us">
+            <p>Contacts and office adreses</p>
+        </div>
+    </footer>
+</body>
 </html>
