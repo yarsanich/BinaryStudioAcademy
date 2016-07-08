@@ -9,7 +9,7 @@ body,html{
     margin: 0;
 }
 .wrapper{
-    min-width: 960px;
+    min-width: 1300px;
 }
 #logo {
     width: 50px;
@@ -89,8 +89,8 @@ nav{
      height: 25px;
 }
 #special::after {
-    left: 200px; /*distance from the left edge of the box*/
-    top: -2px; /*distance from the top of the box*/
+    left: 220px; /*distance from the left edge of the box*/
+    top: 4px; /*distance from the top of the box*/
     width: 80px; /*length of the strip of tape*/
     /*rotate the tape, this time 20° clockwise*/
     -webkit-transform: rotate(20deg);
