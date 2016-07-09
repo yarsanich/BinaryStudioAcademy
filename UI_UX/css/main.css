@@ -1,0 +1,82 @@
+header{    
+    height: 100px;
+    background: #2c3e50;
+}
+header p {
+    line-height: 80px;
+    float: left;
+    color: azure;
+}
+.nav_bar{
+    float: right;
+    color:azure;
+}
+.nav_bar ul li{
+    display: inline-block;
+}
+.clear{
+    clear: both;
+}
+
+.about_me{
+    padding: 70px;
+    text-align: center;
+    background: #95a5a6;
+    height: 500px;
+}
+.about_me img{
+    height: 150px;
+    border-radius: 50%;
+}
+.about_me p{
+    padding: 20px;
+}
+.positions{
+    height: 400px;
+}
+.positions .sidebar{
+    height: inherit;
+    width: 25%;
+    background: #ecf0f1;
+    border: 1px solid black;
+    float:left;
+}
+.positions .main_content {
+    display: none;
+    padding: 40px;
+    text-align: center;
+    margin-left: 25%;
+}
+.positions .main_content p{
+    padding: 20px;
+}
+.positions .main_content img{
+    height: 200px;
+    width: 500px;
+}
+footer{
+    height: 100px;
+    background: #7f8c8d;
+}
+footer div{
+    display: inline-block;    
+}
+.contacts{
+    float:right;
+}
+.positions .sidebar{
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+.menu_block{
+    display: flex;
+    align-self: center;    
+}
