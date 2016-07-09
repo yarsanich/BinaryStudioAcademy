@@ -51,10 +51,12 @@ header a{
     float:left;
 }
 .positions .main_content {
+    height: inherit;
     display: none;
     padding: 40px;
     text-align: center;
     margin-left: 25%;
+    background: white;
 }
 .positions .main_content p{
     padding: 20px;
@@ -65,6 +67,7 @@ header a{
 }
 footer{
     font-family: Montserrat;
+    color: white;
     height: 190px;
     padding: 30px;
     background: #00796b;
