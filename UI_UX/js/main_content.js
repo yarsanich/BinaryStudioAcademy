@@ -1,15 +1,3 @@
-$(document).ready(
-    function(){
-        $(".gadgets").click( function(){
-            $("#first").toggle();
-        }
-        );
-        $(".software").click( function(){
-            $("#second").toggle();
-        }
-        );
-        $(".interests").click( function(){
-            $("#third").toggle();
-        }
-        );
+$(window).load(function() {
+	$("#loading").delay(1500).fadeOut(500);
 });
