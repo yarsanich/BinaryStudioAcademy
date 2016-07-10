@@ -102,6 +102,12 @@ footer a{
     font-size: 17px;
     font-family: Montserrat;
 }
+footer a{
+    color:white;
+}
+footer a:focus, a:hover{
+    color:deepskyblue;
+}
 @media (min-width:992px) {
     .sidebar_pic img { transition: all .2s ease-in-out; }
     .sidebar_pic img:hover { transform: scale(1.3); }
