@@ -1,0 +1,107 @@
+/* =============================================================================
+  COMPONENT
+============================================================================= */
+.component {
+  text-align: center ;
+}
+
+.component p {
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 22px;
+}
+
+/* =============================================================================
+  ICONS - COMMON
+============================================================================= */
+.icon {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin: 4px;
+  width: 96px;
+  height: 96px;
+  font-size: 0;
+  text-indent: -9999px;
+}
+
+.icon-nudge {
+  position: relative;
+  background: url("../img/icons2.png");
+  background-image: url("../img/icons2.svg"), none;
+  -webkit-transition: background 0.2s;
+          transition: background 0.2s;
+}
+
+.icon-nudge::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  content: "";
+  -webkit-transition: height 0.2s;
+          transition: height 0.2s;
+}
+
+.icon-nudge:hover::after {
+  height: 8px;
+}
+
+/* facebook */
+.icon-nudge.facebook {
+  background-color: #3b5998;
+  background-position: 0 0;
+}
+
+.icon-nudge.facebook:hover {
+  background-position: 0 -8px;
+}
+
+.icon-nudge.facebook::after {
+  background-color: #1e2e4f;
+}
+
+/* twitter */
+.icon-nudge.twitter {
+  background-color: #4099ff;
+  background-position: -96px 0;
+}
+
+.icon-nudge.twitter:hover {
+  background-position: -96px -8px;
+}
+
+.icon-nudge.twitter::after {
+  background-color: #0065d9;
+}
+
+/* google plus */
+.icon-nudge.googleplus {
+  background-color: #d34836;
+  background-position: -192px 0;
+}
+
+.icon-nudge.googleplus:hover {
+  background-position: -192px -8px;
+}
+
+.icon-nudge.googleplus::after {
+  background-color: #86291d;
+}
+
+/* github */
+.icon-nudge.github {
+  background-color: #333333;
+  background-position: -288px 0;
+}
+
+.icon-nudge.github:hover {
+  background-position: -288px -8px;
+}
+
+.icon-nudge.github::after {
+  background-color: #4d4d4d;
+}
+
