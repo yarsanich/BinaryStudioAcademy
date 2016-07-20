@@ -10,20 +10,20 @@ Answer:
 Для початку треба глянути загальну структуру колекції, для розуміння того, що нам тре знайти.
 	db.firstTask.find( {} ).pretty()
 	Ну і далі сам запит.
-	db.firstTask.find({'scores.score': {$gt:87,$lt:93}}).pretty() 
+	db.firstTask.find({'scores.score':{$elemMatch: {$gt:87,$lt:93}}}).pretty() 
 Task:
 Написать запрос-агрегацию для выборки всех студентов, у которых результат по экзамену (type: "exam") более 90% (использование unwind)
 Answer:
-	db.firstTask.aggregate([{$match:{'scores':{$elemMatch:{'type':'exam','score':{$gt:90}}}}},{$unwind:'$scores'}]).pretty()
+	db.firstTask.aggregate([{$unwind: '$scores'},{$match: {"scores.type": "exam","scores.score": {$gt: 90}}}]).pretty()
 							elemMatch використовуємо, бо у нас масив scores і нам треба звідти вибрати по двом значенням.
 Task: 
 Студентам с именем Dusti Lemmond добавить поле “accepted” со значением true.
 Anser:
-	db.first_Task.findAndModify({query:{name:"Dusti Lemmond"},update: {$set: {accepted : true}},upsert:true,new:true})
+	db.first_Task.findAndModify({query:{name:"Dusti Lemmond"},update: {$set: {accepted : true}},upsert:true,new:true,multi:true})
 	Так як, не було такого елемента з іменем Dusti Lemmond, треба поставити upsert:true і new:true і він створиться 
 	це також можна зробити через updateOne
 	тому видалимо db.first_Task.remove({'name':'Dusti Lemmond'})
 	і зробимо іншим способом.
-	db.first_Task.updateOne({name:"Dusti Lemmond"},{$set:{accepted:true}},{upsert:true})
+	db.first_Task.updateOne({name:"Dusti Lemmond"},{$set:{accepted:true}},{upsert:true},{multi:true})
 	Також можна було зробити через update так як елемент у нас один.
 
