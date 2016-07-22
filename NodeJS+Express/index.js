@@ -27,19 +27,3 @@ app.post('/messages', function (req, res) {
 	messages.push(message);
 	res.json(message);
 });
-
-mongoose.connect("mongodb://localhost/ajaxChat");
-var ChatSchema = mongoose.Schema({
-	created: Date,
-	content: String,
-	username: String,
-});
-
-var Chat = mongoose.model('Chat',ChatSchema);
-
-
-app.get('/messages', function(req, res) {
-  Chat.find({}).exec(function(err, msgs) {
-    res.json(msgs);
-  });
-});
