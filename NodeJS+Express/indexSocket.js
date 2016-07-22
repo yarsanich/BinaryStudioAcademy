@@ -1,25 +1,21 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-var mongoose = require('mongoose');
+var express = require('express');
 var path = require('path');
+var app = express();
+var socketio = require('socket.io')
+var Chat = require('./DB/db').Chat
 
-mongoose.connect("mongodb://localhost/socketChar");
+var server = app.listen(1444);
+var io = socketio.listen(server);
+var staticDir = __dirname + '/public(socket)/';
+var staticPath = path.normalize(__dirname + '/public(socket)/');
+app.use(express.static(staticPath));
 
-var ChatSchema = mongoose.Schema({
-  created: Date,
-  content: String,
-  username: String,
-});
-
-// create a model from the chat schema
-var Chat = mongoose.model('Chat', ChatSchema);
-
+//ROUTE
 app.get('/', function(req,res){
-	res.sendFile(__dirname+'/public/index(socket).html');
+	res.sendFile(staticDir + 'index.html');
 });
 
-
+//SOCKETS
 io.on('connection', function(socket){
 	console.log('Client connected');
 
@@ -35,7 +31,6 @@ io.on('connection', function(socket){
       content: data.content,
       created: new Date()
     });
-    console.log(newMsg.username,newMsg.content,newMsg.created);
     //Save it to database
     newMsg.save(function(err, data){
       io.emit('chat message', newMsg);
@@ -43,6 +38,3 @@ io.on('connection', function(socket){
   	});
 });
 
-http.listen(2000,function(){
-	console.log('listening on *:2000');
-});
