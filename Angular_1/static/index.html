@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ngapp = "chatApp">
+<head>
+	<title>chatApp Angular JS</title>
+</head>
+<body>
+	<h1 >
+		You must go to /main route to join our chat...
+	</h1>
+	<div ng-view></div>
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src = "../bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src = "../bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src = "./app.js"></script>
+	<script type="text/javascript" src = "./Controllers/indexController.js"></script>
+	<script type="text/javascript" src = "./Controllers/mainController.js"></script>
+	<script type="text/javascript" src = "./services/messagesService.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+		angular.bootstrap(document, ['chatApp']);
+	</script>
+</html>

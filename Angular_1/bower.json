@@ -1,0 +1,24 @@
+{
+  "name": "Angular_1",
+  "homepage": "https://github.com/yarsanich/BinaryStudioAcademy",
+  "authors": [
+    "Yaroslav Neznaradko <nezn27@yahoo.com>"
+  ],
+  "description": "A simple chat app, with HTPP,AngularJS on BSA",
+  "main": "",
+  "keywords": [
+    "chat"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "^3.1.0",
+    "angular": "^1.5.8"
+  }
+}
