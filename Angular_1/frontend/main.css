@@ -1,0 +1,12 @@
+body{
+	text-align: center;
+}
+.Text{
+	display: flex;
+	flex-direction: column;
+}
+.well{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
