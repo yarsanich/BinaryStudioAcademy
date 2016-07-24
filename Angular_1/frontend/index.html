@@ -3,11 +3,14 @@
 <head>
 	<title>chatApp Angular JS</title>
 </head>
-<body>
-	<h1 ng-if = "index.toShowHeader()">
-		You must go to /main route to join our chat...
-	</h1>
-	<div ng-view></div>
+<body >
+	<div ng-controller = "indexController as index">
+		<h1 ng-if = "!index.toShowHeader()">
+			You must go to <a href="#/main">/main</a> route to join our chat...
+		</h1>
+	</div>
+	<div ng-view>
+	</div>
 </body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src = "../bower_components/angular/angular.min.js"></script>

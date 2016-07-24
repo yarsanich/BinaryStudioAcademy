@@ -1,10 +1,9 @@
 (function() {
 	'use strict';
 
-	var module = angular.module('chatApp');
-
-	module.
-		controller('indexController', indexController);
+	angular
+		.module('chatApp')
+		.controller('indexController', indexController);
 
 	indexController.$inject = [
 		'$location'

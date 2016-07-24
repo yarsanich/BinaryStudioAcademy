@@ -1,5 +1,5 @@
-module.exports = function(app,messages){
-	
+module.exports = function(app){
+	var messages;
 	app.get('/messages', function (req, res) {
 		res.json(messages);
 	});

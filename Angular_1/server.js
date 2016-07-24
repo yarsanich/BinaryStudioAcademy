@@ -3,7 +3,7 @@ var path = require('path'),
 	express = require('express'),
 	messages = [],
 	app = express(),
-	//viewRoutes = require('./routes/messages')(app,messages);
+	//viewRoutes = require('./routes/messages')(app);
 	staticPath = path.normalize(__dirname + '/frontend'),
 	server = app.listen(3000);
 
@@ -11,6 +11,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(staticPath));
+
+//when write routes on other file didnt work on my PC. 
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 app.get('/messages', function (req, res) {

@@ -7,16 +7,20 @@
 	<form class="row" ng-hide = "main.flag" name="usernameForm" >
 		<h1> Your must enter your name</h1>
 		<input type="text" placeholder="Your name" ng-model = "username" required>
-		<input type="button" value="OK" ng-click = "setUsername()">
+		<input type="button" value="OK" ng-click = "main.setUsername()">
 	</form>
-	<div ng-repeat="msg in main.messages track by $index" class = "well">
-			<h4 id = "name">{{msg.username}}<h4> <h4 id = "text"> {{msg.content}}<h4> <h4 id='date'>{{msg.date | date:'yyyy-MM-dd hh:mm a'}}</h4>
+	<div ng-show = "main.flag">
+	<h1>Chat history</h1>
+	<div ng-repeat="msg in main.messages track by $index" class = "well well-sm" >
+			<h4 id = "name">{{msg.username}}<h4> <h4 id = "text"> {{msg.content}}<h4> 
+			<h4 id='date'>{{msg.date | date:'yyyy-MM-dd hh:mm a'}}</h4>
 		</div>
+	</div>
 	<div class="Text" ng-show = "main.flag">
 		<h1>Enter your message</h1>
 		<textarea class="form-control" rows="5" ng-model = "content"></textarea>
-		<input type="button" value="Send" ng-click="SendData()" class="btn btn-success">
-		<input type="button" value="RefreshChat" ng-click = "getData()" class="btn btn-primary">
+		<input type="button" value="Send" ng-click="main.SendData()" class="btn btn-success">
+		<input type="button" value="RefreshChat" ng-click = "main.getMessages()" class="btn btn-primary">
 	</div>
 </body>
 </html>

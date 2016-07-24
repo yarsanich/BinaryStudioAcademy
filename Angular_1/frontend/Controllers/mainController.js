@@ -1,9 +1,9 @@
 (function() {
 	'use strict';
 
-	var module = angular.module('chatApp');
-
-	module.controller('mainController', mainController);
+    angular
+        .module('chatApp')
+        .controller('mainController', mainController);
 
 	mainController.$inject = [
 		'$scope',
@@ -14,10 +14,11 @@
 	function mainController($scope,messagesService,$http) {
 		var vm = this;
 		vm.messages = [];
-		var username = '';
 		vm.flag = false;
         vm.getMessages = getMessages;
-
+        vm.setUsername = setUsername;
+        vm.SendData = SendData;
+        var username = '';
 		function getMessages(){
 			messagesService.getMessages()
                 .then(function(messages){
@@ -28,12 +29,13 @@
                     console.log('Messages retrieval failed.');
                 });
     	}
-		$scope.setUsername= function(){
+
+		function setUsername(){
 			username = $scope.username;
 			if ($scope.usernameForm.$valid)
 				vm.flag = true;
 		}
-		$scope.SendData = function () {
+		function SendData() {
             var data = {
                 username: username,
                 content: $scope.content,
@@ -50,11 +52,6 @@
              	console.log(data)
             });
         };
-
-        $scope.getData = function(){
-        	vm.getMessages();
-        };
-
         vm.getMessages();
 	}
 })();
