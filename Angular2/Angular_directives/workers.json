@@ -1,0 +1,26 @@
+[{
+    "id": 0,
+    "firstName": "Monica",
+    "secondName": "Knowles",
+    "email": "monicaknowles@brainclip.com"
+}, {
+    "id": 1,
+    "firstName": "Jeanette",
+    "secondName": "Mclean",
+    "email": "jeanettemclean@brainclip.com"
+}, {
+    "id": 2,
+    "firstName": "Connie",
+    "secondName": "Hubbard",
+    "email": "conniehubbard@brainclip.com"
+}, {
+    "id": 3,
+    "firstName": "Humphrey",
+    "secondName": "Spencer",
+    "email": "humphreyspencer@brainclip.com"
+}, {
+    "id": 4,
+    "firstName": "Tameka",
+    "secondName": "Price",
+    "email": "tamekaprice@brainclip.com"
+}]
