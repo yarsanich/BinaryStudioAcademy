@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="workersInfo">
+<head>
+	<title>Angular-component-realization</title>
+</head>
+	<link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="./frontend/css/main.css"></link>
+<body ng-cloak>
+	<div class="explain">
+        <h2>Welcome to workers info page</h2>
+        <p>You can get and edit any info about workers</p>
+    </div>
+    <div id="main">
+    	<workers-data></workers-data>
+    </div>
+</body>
+<script type="text/javascript" src="/bower_components/jQuery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="/bower_components/angular-component-router/angular_1_router.js"></script>
+<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="/app.js"></script>
+<script type="text/javascript" src="/frontend/components/workersData.component.js"></script>
+<script type="text/javascript" src="/frontend/services/getJson.factory.js"></script>
+</html>

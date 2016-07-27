@@ -1,0 +1,52 @@
+<div class = "wrapper ">
+    <table class="table table-responsive" >
+        <thead class="thead-inverse">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th colspan="2">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="worker in main.workers track by $index">
+                <td>{{worker.firstName}}
+                    <form name="fName" ng-submit="main.saveWorker()">
+                        <div ng-if="main.edit[$index]">
+                            <input type="text" class="form-control" name = "firstName" ng-model="main.firstName"  required>
+                            <div class="alert alert-danger" ng-show="fName.firstName.$error.required" role="alert">
+                            <span ng-show="fName.firstName.$error.required">Enter full name</span> 
+                            </div>
+                        </div>
+                    </form>
+                </td>
+                <td>{{worker.secondName}}
+                    <form name="sName" ng-submit="main.saveWorker()">
+                        <div ng-if="main.edit[$index]">
+                            <input type="text" class="form-control" name = "secondName" ng-model="main.secondName" required>
+                            <div class="alert alert-danger" ng-show="sName.secondName.$error.required" role="alert">
+                            <span ng-show="sName.secondName.$error.required">Enter full sname</span> 
+                            </div>
+                        </div>
+                    </form>
+                </td>
+                <td>{{worker.email}}
+                    <form name="Email" ng-submit="main.saveWorker()">
+                        <div ng-if="main.edit[$index]">
+                        <input type="email" name = "email" class="form-control" ng-model="main.email" required>
+                            <div class="alert alert-danger" ng-show="Email.email.$invalid || Email.email.$error.required" role="alert">
+                            <span ng-show="Email.email.$invalid || Email.email.$error.required">Enter valid email</span>
+                            </div>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <button class="btn btn-default" ng-if="!main.edit[$idnex]" ng-show="!main.edit[$index]" ng-click="main.editWorker($index);"><span class="glyphicon glyphicon-pencil" ></span></button>
+                    <button class="btn btn-default" ng-if="main.edit[$index]" ng-click="main.saveWorker($index,(fName.$valid && sName.$valid && Email.$valid),worker.id)"><span class="glyphicon glyphicon-ok" ></span></button>
+                    <button class="btn btn-default" ng-if="main.edit[$index]" ng-click="main.cancelSave($index);"><span class="glyphicon glyphicon-chevron-up " ></span></button>
+                </td>
+                <td><button class="btn btn-default" ng-click="main.removeWorker($index);"><span class="glyphicon glyphicon-remove" ></span></button></td>
+            </tr>
+        </tbody>
+        <ng-outlet></ng-outlet>
+</div>
