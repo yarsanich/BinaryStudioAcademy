@@ -28,15 +28,20 @@
             }
             scope.editWorker = function(id) {
                 scope.edit[id] = true;
+                scope.firstName = scope.workers[id].firstName;
+                scope.secondName = scope.workers[id].secondName;
+                scope.email = scope.workers[id].email;
             }
-            scope.saveWorker = function(id) {
-                scope.edit[id] = false;
-                var data = {
-                    firstName: scope.workers[id].firstName,
-                    secondName: scope.workers[id].secondName,
-                    email: scope.workers[id].email,
+            scope.saveWorker = function(id,flag) {
+                if (flag){
+                    scope.edit[id] = false;
+                    var data = {
+                        firstName: scope.workers[id].firstName,
+                        secondName: scope.workers[id].secondName,
+                        email: scope.workers[id].email,
+                    }
+                    getJson.editWorker(scope.workers[id]._id, data);
                 }
-                getJson.editWorker(scope.workers[id]._id, data);
             }
             scope.removeWorker = function(id, id_del) {
                 scope.workers.splice(id, 1);
