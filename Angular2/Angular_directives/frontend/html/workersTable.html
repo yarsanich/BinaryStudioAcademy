@@ -32,7 +32,7 @@
                     </form>
                 </td>
                 <td>
-                    <button class="btn btn-default" ng-if="!edit[$idnex];" ng-click="editWorker($index);"><span class="glyphicon glyphicon-pencil" ></span></button>
+                    <button class="btn btn-default" ng-if="!edit[$idnex]" ng-show="!edit[$index]" ng-click="editWorker($index);"><span class="glyphicon glyphicon-pencil" ></span></button>
                     <button class="btn btn-default" ng-if="edit[$index]" ng-click="saveWorker($index);"><span class="glyphicon glyphicon-ok" ></span></button>
                     <button class="btn btn-default" ng-if="edit[$index]" ng-click="cancelSave($index);"><span class="glyphicon glyphicon-chevron-up " ></span></button>
                 </td>
