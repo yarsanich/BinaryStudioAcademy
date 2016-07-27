@@ -11,6 +11,5 @@
 
     function mainController($http) {
         var vm = this;
-
     }
 })();

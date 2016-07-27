@@ -16,7 +16,7 @@
         return {
             getWorkers: function() {
                 var deferred = $q.defer();
-                $http.get('workers.json').success(function(data) {
+                $http.get('/workers.json').success(function(data) {
                     deferred.resolve(data);
                 }).error(function(msg, code) {
                     deferred.reject(msg);
@@ -30,7 +30,9 @@
                 });
             },
             editWorker: function(id, data) {
-                return $http.put('/workers/' + id, data).then(function() {
+                console.log(id);
+                console.log(data);
+                $http.put('/workers/' + id, data).success(function() {
                     console.log("worker saved!");
                 });
             }

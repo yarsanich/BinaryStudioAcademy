@@ -14,23 +14,29 @@ jsonfile.readFile(file, function(err, obj) {
 
 server = app.listen(3000);
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(express.static(staticPath));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname));
 app.use('/', router);
 
+router.get('/workers.json', function(req, res) {
+    res.json(workers);
+});
 
 router.delete('/workers/:id', function(req, res) {
     console.log('Remove ' + req.params.id);
-    workers.splice(req.params.id + 1, 1);
+    workers.splice(req.params.id, 1);
     jsonfile.writeFile(file, workers, function(err) {
-        console.error(err)
+        console.log("No errors when delete");
     })
 });
 
-router.put('/todos/:id', function(req, res) {
+router.put('/workers/:id', function(req, res) {
     var id = req.params.id;
     var worker = req.body;
+    console.log(req.body);
     for (var i = 0; i < workers.length; i++) {
         if (workers[i]._id === id) {
             workers[i].firstName = worker.firstName;
@@ -39,9 +45,9 @@ router.put('/todos/:id', function(req, res) {
         }
     }
     jsonfile.writeFile(file, workers, function(err) {
-        console.error(err)
+        console.log("No error when update!");
     })
 });
 
 
-module.exports = router;
+module.exports = app;

@@ -11,29 +11,29 @@
         <tbody>
             <tr ng-repeat="worker in workers track by $index">
                 <td>{{worker.firstName}}
-                    <form name="firstName">
-                        <div ng-if="edit[$index]" ng-submit="saveWorker()">
-                            <input type="text" class="form-control" ng-model="fName" required>
+                    <form name="firstName" ng-submit="saveWorker()">
+                        <div ng-if="edit[$index]">
+                            <input type="text" class="form-control" ng-model="worker.firstName" required>
                         </div>
                     </form>
                 </td>
                 <td>{{worker.secondName}}
                     <form name="secondName" ng-submit="saveWorker()">
                         <div ng-if="edit[$index]">
-                            <input type="text" class="form-control" ng-model="sName" required>
+                            <input type="text" class="form-control" ng-model="worker.secondName" required>
                         </div>
                     </form>
                 </td>
                 <td>{{worker.email}}
                     <form name="email" ng-submit="saveWorker()">
                         <div ng-if="edit[$index]" name="email">
-                            <input type="email" class="form-control" ng-model="email" required>
+                            <input type="email" class="form-control" ng-model="worker.email" required>
                         </div>
                     </form>
                 </td>
                 <td>
-                    <button class="btn btn-default" ng-if="!edit[$idnex]" ng-click="editWorker($index);"><span class="glyphicon glyphicon-pencil" ></span></button>
-                    <button class="btn btn-default" ng-if="edit[$index]" ng-click="saveWorker(worker.id);"><span class="glyphicon glyphicon-ok" ></span></button>
+                    <button class="btn btn-default" ng-if="!edit[$idnex];" ng-click="editWorker($index);"><span class="glyphicon glyphicon-pencil" ></span></button>
+                    <button class="btn btn-default" ng-if="edit[$index]" ng-click="saveWorker($index);"><span class="glyphicon glyphicon-ok" ></span></button>
                     <button class="btn btn-default" ng-if="edit[$index]" ng-click="cancelSave($index);"><span class="glyphicon glyphicon-chevron-up " ></span></button>
                 </td>
                 <td><button class="btn btn-default" ng-click="removeWorker($index,worker.id);"><span class="glyphicon glyphicon-remove" ></span></button></td>

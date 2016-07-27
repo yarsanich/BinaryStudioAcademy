@@ -6,20 +6,16 @@
 
     workersTable.$inject = [
         'getJson',
-        '$http',
     ];
 
     function workersTable(getJson) {
         return {
             restrict: 'E',
             templateUrl: 'frontend/html/workersTable.html',
-            controller: 'mainController',
-            controllerAs: 'main',
-            transclude: true,
             link: linkFunc
         }
 
-        function linkFunc(scope, $http) {
+        function linkFunc(scope) {
             scope.edit = [];
             for (var i = 0; i < 100; i++)
                 scope.edit[i] = false;
@@ -35,19 +31,16 @@
             }
             scope.saveWorker = function(id) {
                 scope.edit[id] = false;
-                console.log(scope.fName);
-                if (scope.fName.$valid && scope.sName && scope.email) {
-                    var data = {
-                        firstName: scope.fName,
-                        sceondName: scope.sName,
-                        email: scope.email
-                    }
-                    getJson.editWorker(id, data);
+                var data = {
+                    firstName: scope.workers[id].firstName,
+                    secondName: scope.workers[id].secondName,
+                    email: scope.workers[id].email,
                 }
+                getJson.editWorker(scope.workers[id]._id, data);
             }
             scope.removeWorker = function(id, id_del) {
                 scope.workers.splice(id, 1);
-                getJson.removeWorker(id_del);
+                getJson.removeWorker(id);
             }
         }
     }
